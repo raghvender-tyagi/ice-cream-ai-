@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Parlour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        nav {
+            background-color: #ffdde5;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        nav img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        nav a {
+            color: rgb(16, 1, 1);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        #icecreamai {
+            width: 100%;
+            background-color: #542bda;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://tse2.mm.bing.net/th?id=OIP.hvFS95V8PARBFfFSI3UfPgHaEJ&pid=Api&P=0&h=220');
+            background-size: cover;
+            color: rgb(21, 1, 1);
+        font-family: Dancing Script;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+        .menu {
+            padding: 20px;
+            text-align: center;
+        }
+        .menu h2 {
+            color: #ffcce0;
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            width: 200px;
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .offers {
+    padding: 50px 20px;
+    background-color: #fff8f0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around; /* Space out the items evenly */
+    flex-wrap: wrap;
+     /* Allow the items to wrap if the screen is small */
+}
+
+.offers h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #ff7f50;
+    width: 100%; /* Ensure the title spans the full width */
+    text-align: center;
+}
+
+.offer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 2px solid #ff7f50;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%; /* Set a width so they appear side by side */
+    min-width: 300px;
+    /* background-image: url(https://tse2.mm.bing.net/th?id=OIP.ucQkH7n0T9o2JdQY2AlY_gHaH_&pid=Api&P=0&h=220) Ensure the items don't become too narrow */
+}
+
+.offer-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+
+  
+}
+
+.offer-details {
+    max-width: 400px;
+    text-align: left;
+}
+
+.offer-details h3 {
+    font-size: 24px;
+    color: #ff7f50;
+    margin-bottom: 10px;
+}
+
+.offer-details p {
+    font-size: 16px;
+    color: #333;
+}
+
+.offer-expiry {
+    font-size: 14px;
+    color: #ff6347;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .offer-item {
+        flex-direction: column;
+        width: 100%; /* On small screens, stack them vertically */
+    }
+    .offer-item img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+        footer {
+            background-color: #ffcce0;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://tse1.mm.bing.net/th?id=OIP.cFcnH-x_sUZ5F57X5iPQqwHaHa&pid=Api&P=0&h=220" alt="Ice Cream Parlour Logo">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="{%url 'About'%}">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="{%url 'Login'%}">Login</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Where Every Bite is a Dream</h1>
+        <p>Explore our wide range of flavors and toppings.</p>
+    </section>
+    <form action="{% url 'AI' %}" method="get">
+        <button id="icecreamai" type="submit">ICE_CREAM_AI</button>
+    </form>
+    
+    <section class="offers" id="offers">
+        <h2 >Special Offers</h2>
+        <div class="offer-item">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.KoIopiedwrCOLyAhp5yI8gHaGY&pid=Api&P=0&h=220" alt="Buy One Get One Free">
+            <div class="offer-details">
+                <h3>Buy One Get One Free</h3>
+                <p>Get a free scoop when you buy any cone. Hurry, limited time only!</p>
+                <p class="offer-expiry">Expires: 31st December 2024</p>
+            </div>
+        </div>
+        <div class="offer-item">
+            <img src="https://tse3.mm.bing.net/th?id=OIP._AbW58hSuvEILljwHlTNfwHaEL&pid=Api&P=0&h=220" alt="Happy Hour">
+            <div class="offer-details">
+                <h3>Happy Hour - 20% Off</h3>
+                <p>Enjoy a 20% discount on all orders between 3 PM to 5 PM.</p>
+                <p class="offer-expiry">Available daily from 3 PM - 5 PM</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-item">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.rnwVPkscbyg7vbulDt1T9gHaHa&pid=Api&P=0&h=220" alt="Vanilla Ice Cream">
+            <h3>Vanilla Delight</h3>
+            <p>$5.99</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.V4tisOuDyAK_Jw8TnXT_zAHaE8&pid=Api&P=0&h=220" alt="Chocolate Ice Cream">
+            <h3>Chocolate Bliss</h3>
+            <p>$6.99</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.N56MN6Cv5HPwPSMNgVQ4MQHaHa&pid=Api&P=0&h=220" alt="Strawberry Ice Cream">
+            <h3>Strawberry Dream</h3>
+            <p>$5.99</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ice Cream Parlour. All rights reserved.</p>
+    </footer>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <!-- Flavor Field -->
+        <label for="flavor">Flavor:</label>
+        <input type="text" id="flavor" name="flavor"><br>
+
+        <!-- Price Field -->
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price"><br>
+
+        <!-- Stock Field -->
+        <label for="stock">Stock:</label>
+        <input type="text" id="stock" name="stock"><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
